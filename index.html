@@ -54,7 +54,6 @@
   --burgundy:#3d281c; --burgundy2:#4d3428;
   --pink:#e0baa8; --pink-d:#cf9d8d;
   --beige:#ecd9c8; --beige-d:#d9c0ab;
-  --sky:#bfd4f9;
   --brown:#7a5240;
   --base-dark:#221811;
   --line:rgba(61,40,28,.14); --line-i:rgba(255,243,226,.18); --r:28px;
@@ -107,7 +106,7 @@ section{padding:76px 0;position:relative}
 .hero .cta-row .btn{min-height:52px;padding:0 38px}
 
 /* stats — continues the dark open */
-.stats{background:var(--burgundy);color:var(--cream);padding-top:10px}
+.stats{background:var(--burgundy);color:var(--cream);padding-top:56px;border-radius:56px 56px 0 0;margin-top:-40px;position:relative;z-index:2}
 .stats .eyebrow{color:var(--pink)}
 
 /* proof strip — static client list */
@@ -124,20 +123,20 @@ section{padding:76px 0;position:relative}
 .services .heading h2,.services .heading .eyebrow{color:var(--cream)}
 .services .heading p{color:#e8d6cf}
 .frames{display:grid;gap:12px}
-.frame{background:#fff;color:var(--ink);border-radius:var(--r);padding:26px 24px;display:grid;grid-template-columns:44px 1fr;gap:14px;cursor:pointer;box-shadow:0 1px 0 var(--line);transition:opacity .7s cubic-bezier(.16,1,.3,1) calc(var(--i,0)*90ms),transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s ease,background .3s ease,color .3s ease}
-.frame:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(58,31,34,.1)}
-.frame.picked{background:var(--burgundy);color:var(--cream)}
+.frame{background:var(--burgundy2);color:var(--cream);border-radius:var(--r);padding:26px 24px;display:grid;grid-template-columns:44px 1fr;gap:14px;cursor:pointer;box-shadow:0 1px 0 var(--line-i);transition:opacity .7s cubic-bezier(.16,1,.3,1) calc(var(--i,0)*90ms),transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s ease,background .3s ease,color .3s ease}
+.frame:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(0,0,0,.28)}
+.frame.picked{background:var(--pink);color:var(--burgundy)}
 .badge{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font:13px "Inter",sans-serif;font-weight:700;color:var(--burgundy)}
 .frame:nth-child(1) .badge{background:var(--beige)}
 .frame:nth-child(2) .badge{background:var(--pink)}
-.frame:nth-child(3) .badge{background:var(--sky)}
+.frame:nth-child(3) .badge{background:var(--pink-d)}
 .frame:nth-child(4) .badge{background:var(--beige-d)}
-.frame h3{font-size:22px;font-weight:700;margin:0 0 6px}
-.frame p{margin:0 0 12px;color:#6b4c3b;max-width:480px}
-.frame.picked p{color:#e6d3c4}
+.frame h3{font-size:22px;font-weight:700;margin:0 0 6px;color:inherit}
+.frame p{margin:0 0 12px;color:#e8d6cf;max-width:480px}
+.frame.picked p{color:#5c3530}
 .chips{display:flex;flex-wrap:wrap;gap:6px}
-.chips span{border:1px solid var(--line);border-radius:999px;padding:4px 11px;font:11px "Inter",sans-serif;font-weight:500}
-.frame.picked .chips span{border-color:var(--line-i)}
+.chips span{border:1px solid var(--line-i);border-radius:999px;padding:4px 11px;font:11px "Inter",sans-serif;font-weight:500;color:inherit}
+.frame.picked .chips span{border-color:var(--line)}
 .recap{margin-top:20px;padding:20px 24px;border-radius:var(--r);background:#fff;color:var(--ink);font-size:15px;line-height:1.5}
 .recap b{color:var(--burgundy)}
 
@@ -191,14 +190,16 @@ section{padding:76px 0;position:relative}
 .folder-tab:nth-child(4){background:var(--ink);z-index:4}
 .folder-tab:not(.active){filter:brightness(.82)}
 .folder-tab.active{transform:translateY(-12px);z-index:10}
-.folder-card{position:relative;z-index:0;margin-top:-12px;background:var(--burgundy2);border-radius:4px 28px 28px 28px;padding:72px 60px;color:var(--cream);min-height:340px;display:flex;flex-direction:column;justify-content:center;box-shadow:0 20px 50px rgba(61,40,28,.18)}
-.folder-card h3{font-family:"Fraunces",serif;font-weight:400;font-size:clamp(28px,4vw,42px);line-height:1.3;margin:0 0 20px;color:var(--cream)}
+.folder-card{position:relative;z-index:0;margin-top:-12px;background:var(--burgundy2);border-radius:4px 28px 28px 28px;padding:72px 60px;color:var(--cream);min-height:340px;display:flex;flex-direction:column;justify-content:center;box-shadow:0 20px 50px rgba(61,40,28,.18);transition:background-color .45s ease,color .45s ease}
+.folder-card h3{font-family:"Fraunces",serif;font-weight:400;font-size:clamp(28px,4vw,42px);line-height:1.3;margin:0 0 20px;color:inherit}
 .folder-card h3 b{font-weight:400}
 .folder-card h3 em{font-style:italic}
-.folder-card p{margin:0;font-size:17px;line-height:1.75;color:#e8d6cf;max-width:560px;transition:opacity .3s ease}
-.folder-card p b{color:var(--cream);font-weight:700}
+.folder-card p{margin:0;font-size:17px;line-height:1.75;color:inherit;opacity:.88;max-width:560px;transition:opacity .3s ease}
+.folder-card p b{color:inherit;opacity:1;font-weight:700}
 .folder-card.swap h3,.folder-card.swap p{opacity:0;transform:translateY(6px)}
 .folder-card h3,.folder-card p{transition:opacity .35s ease,transform .35s ease}
+.folder-card.light{color:var(--ink)}
+.folder-card.light p{opacity:.75}
 
 /* faq */
 .faq{display:grid;gap:10px}
@@ -524,24 +525,38 @@ document.querySelectorAll(".counter").forEach(el=>counterIo.observe(el));
   const card=document.getElementById("folderCard");
   if(!nav||!card)return;
   const STEPS=[
-    {label:"Étape 1", title:"On se parle.", body:"Vous nous racontez votre marque, vos envies et là où vous avez besoin de renfort — <b>on prend le temps de bien comprendre avant de proposer quoi que ce soit.</b>"},
-    {label:"Étape 2", title:"On propose.", body:"Une direction, des idées et une façon de travailler qui a du sens pour vous — <b>rien n'est lancé sans votre validation.</b>"},
-    {label:"Étape 3", title:"On crée.", body:"On transforme la direction en contenu, en communication et en choses concrètes — <b>prêtes à publier, pensées pour votre marque.</b>"},
-    {label:"Étape 4", title:"On fait vivre.", body:"Votre présence trouve un rythme et reste juste, belle et active dans le temps — <b>on continue d'ajuster avec vous.</b>"}
+    {label:"Étape 1", title:"On se parle.", body:"Vous nous racontez votre marque, vos envies et là où vous avez besoin de renfort — <b>on prend le temps de bien comprendre avant de proposer quoi que ce soit.</b>", color:"var(--beige-d)", light:true},
+    {label:"Étape 2", title:"On propose.", body:"Une direction, des idées et une façon de travailler qui a du sens pour vous — <b>rien n'est lancé sans votre validation.</b>", color:"var(--brown)", light:false},
+    {label:"Étape 3", title:"On crée.", body:"On transforme la direction en contenu, en communication et en choses concrètes — <b>prêtes à publier, pensées pour votre marque.</b>", color:"var(--burgundy2)", light:false},
+    {label:"Étape 4", title:"On fait vivre.", body:"Votre présence trouve un rythme et reste juste, belle et active dans le temps — <b>on continue d'ajuster avec vous.</b>", color:"var(--ink)", light:false}
   ];
   const tabs=[...nav.querySelectorAll(".folder-tab")];
+  function applyStep(i,animate){
+    const s=STEPS[i];
+    const setColors=()=>{
+      card.style.background=s.color;
+      card.classList.toggle("light",s.light);
+    };
+    if(!animate){
+      setColors();
+      card.innerHTML=`<h3>${s.label} : <em>${s.title}</em></h3><p>${s.body}</p>`;
+      return;
+    }
+    card.classList.add("swap");
+    setTimeout(()=>{
+      setColors();
+      card.innerHTML=`<h3>${s.label} : <em>${s.title}</em></h3><p>${s.body}</p>`;
+      card.classList.remove("swap");
+    },220);
+  }
   tabs.forEach(tab=>tab.addEventListener("click",()=>{
     const i=+tab.dataset.step;
     if(tab.classList.contains("active"))return;
     tabs.forEach(t=>t.classList.remove("active"));
     tab.classList.add("active");
-    card.classList.add("swap");
-    setTimeout(()=>{
-      const s=STEPS[i];
-      card.innerHTML=`<h3>${s.label} : <em>${s.title}</em></h3><p>${s.body}</p>`;
-      card.classList.remove("swap");
-    },220);
+    applyStep(i,true);
   }));
+  applyStep(0,false);
 })();
 </script>
 </body></html>
