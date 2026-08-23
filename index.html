@@ -47,7 +47,7 @@
 </script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Fraunces:ital,wght@1,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Fraunces:ital,wght@0,300;0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
 <style>
 :root{
   --cream:#fff3e2; --ink:#3d281c;
@@ -56,14 +56,15 @@
   --beige:#ecd9c8; --beige-d:#d9c0ab;
   --sky:#bfd4f9;
   --brown:#7a5240;
+  --base-dark:#221811;
   --line:rgba(61,40,28,.14); --line-i:rgba(255,243,226,.18); --r:28px;
 }
 *{box-sizing:border-box}
-body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.55 "Inter",sans-serif;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--base-dark);color:var(--cream);font:16px/1.55 "Inter",sans-serif;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 .wrap{width:min(100% - 32px,1180px);margin:auto;position:relative}
 h1,h2,h3{margin:0;font-family:"Plus Jakarta Sans",sans-serif;letter-spacing:-.02em}
-.eyebrow{font:11px/1.4 "Inter",sans-serif;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--brown);margin-bottom:14px;display:block}
+.eyebrow{font:11px/1.4 "Inter",sans-serif;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--pink);margin-bottom:14px;display:block}
 img{max-width:100%;display:block}
 
 /* header — dark */
@@ -89,27 +90,28 @@ section{padding:76px 0;position:relative}
 .reveal.visible{opacity:1;transform:none}
 .heading{display:grid;gap:14px;margin-bottom:36px}
 .heading h2{font-size:clamp(34px,5vw,54px);line-height:1.05;font-weight:700;max-width:640px}
-.heading p{max-width:400px;margin:0;color:#6b4c3b;font-size:15.5px}
+.heading p{max-width:400px;margin:0;color:#e8d6cf;font-size:15.5px}
 .fact,.frame,.reel,.testi,.step,.faq details,.col-card,.mini-feat{opacity:0;transform:translateY(22px) scale(.97);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1);transition-delay:calc(var(--i,0)*90ms)}
 .reveal.visible .fact,.reveal.visible .frame,.reveal.visible .reel,.reveal.visible .testi,.reveal.visible .step,.reveal.visible .faq details,.reveal.visible .col-card,.reveal.visible .mini-feat{opacity:1;transform:none}
 .badge,.num-circ,.qn{opacity:0;transform:scale(.35);transition:opacity .5s ease calc(var(--i,0)*90ms + .15s),transform .55s cubic-bezier(.34,1.56,.64,1) calc(var(--i,0)*90ms + .15s)}
 .reveal.visible .badge,.reveal.visible .num-circ,.reveal.visible .qn{opacity:1;transform:scale(1)}
 
 /* hero — dark, no gradient shapes */
-.hero{padding:100px 0 68px;background:var(--burgundy);color:var(--cream)}
+.hero{min-height:860px;display:flex;align-items:flex-end;padding:0 0 90px;background:linear-gradient(180deg,rgba(15,10,7,.2),rgba(15,10,7,.35) 55%,rgba(10,7,5,.86) 100%),url('bg-desk.jpg');background-size:cover;background-position:center;color:var(--cream)}
 .hero .eyebrow{color:var(--pink)}
-.hero-copy{max-width:640px}
-.hero h1{font-size:clamp(44px,8vw,86px);line-height:1;font-weight:800;margin-bottom:22px}
-.hero h1 span{color:var(--pink)}
-.hero p{max-width:460px;margin:0 0 30px;font-size:18px;color:#e8d6cf}
-.hero .cta-row{display:flex;flex-wrap:wrap;gap:12px}
+.hero-copy{max-width:640px;width:100%}
+.hero .label{display:block;margin-bottom:22px;font:12px "Inter",sans-serif;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--cream)}
+.hero h1{font-family:"Plus Jakarta Sans",sans-serif;font-weight:800;font-size:clamp(38px,6vw,64px);line-height:1.08;letter-spacing:-.02em;margin-bottom:24px;color:var(--cream)}
+.hero p{max-width:440px;margin:0 0 38px;font-size:16.5px;line-height:1.7;font-weight:400;color:var(--cream)}
+.hero .cta-row{display:flex;flex-wrap:wrap;gap:16px}
+.hero .cta-row .btn{min-height:52px;padding:0 38px}
 
 /* stats — continues the dark open */
 .stats{background:var(--burgundy);color:var(--cream);padding-top:10px}
 .stats .eyebrow{color:var(--pink)}
 
 /* proof strip — static client list */
-.proof{background:var(--cream);padding:76px 0 130px;border-radius:56px 56px 0 0;margin-top:-40px;position:relative;z-index:2}
+.proof{background:var(--base-dark);padding:76px 0 130px;border-radius:56px 56px 0 0;margin-top:-40px;position:relative;z-index:2}
 .proof-row{display:flex;flex-wrap:wrap;gap:12px}
 .proof-row span{padding:7px 15px;border-radius:999px;border:1px solid var(--line);font:12px "Inter",sans-serif;font-weight:600;letter-spacing:.01em;color:var(--ink);background:#fff}
 .facts{display:grid;gap:12px}
@@ -117,10 +119,12 @@ section{padding:76px 0;position:relative}
 .fact strong{display:block;font:clamp(42px,7vw,60px) "Plus Jakarta Sans",sans-serif;font-weight:800;color:var(--pink);line-height:1}
 .fact span{display:block;margin-top:10px;color:#d8c3b3;font-size:14px}
 
-/* services — light, blue only as small hint */
-.services{background:var(--sky);border-radius:56px 56px 0 0;margin-top:-40px;position:relative;z-index:2;padding-top:96px}
+/* services — photo backdrop */
+.services{background:linear-gradient(180deg,rgba(20,13,9,.55),rgba(20,13,9,.72) 60%,rgba(20,13,9,.88)),url('bg-services.jpg');background-size:cover;background-position:center;border-radius:56px 56px 0 0;margin-top:-40px;position:relative;z-index:2;padding-top:96px;padding-bottom:56px}
+.services .heading h2,.services .heading .eyebrow{color:var(--cream)}
+.services .heading p{color:#e8d6cf}
 .frames{display:grid;gap:12px}
-.frame{background:#fff;border-radius:var(--r);padding:26px 24px;display:grid;grid-template-columns:44px 1fr;gap:14px;cursor:pointer;box-shadow:0 1px 0 var(--line);transition:opacity .7s cubic-bezier(.16,1,.3,1) calc(var(--i,0)*90ms),transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s ease,background .3s ease,color .3s ease}
+.frame{background:#fff;color:var(--ink);border-radius:var(--r);padding:26px 24px;display:grid;grid-template-columns:44px 1fr;gap:14px;cursor:pointer;box-shadow:0 1px 0 var(--line);transition:opacity .7s cubic-bezier(.16,1,.3,1) calc(var(--i,0)*90ms),transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s ease,background .3s ease,color .3s ease}
 .frame:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(58,31,34,.1)}
 .frame.picked{background:var(--burgundy);color:var(--cream)}
 .badge{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font:13px "Inter",sans-serif;font-weight:700;color:var(--burgundy)}
@@ -134,7 +138,7 @@ section{padding:76px 0;position:relative}
 .chips{display:flex;flex-wrap:wrap;gap:6px}
 .chips span{border:1px solid var(--line);border-radius:999px;padding:4px 11px;font:11px "Inter",sans-serif;font-weight:500}
 .frame.picked .chips span{border-color:var(--line-i)}
-.recap{margin-top:20px;padding:20px 24px;border-radius:var(--r);background:#fff;font-size:15px;line-height:1.5}
+.recap{margin-top:20px;padding:20px 24px;border-radius:var(--r);background:#fff;color:var(--ink);font-size:15px;line-height:1.5}
 .recap b{color:var(--burgundy)}
 
 /* reels */
@@ -144,40 +148,61 @@ section{padding:76px 0;position:relative}
 .reel-media{position:relative;aspect-ratio:9/16;background-size:cover;background-position:center;overflow:hidden}.reel-media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block}
 .play{position:absolute;right:12px;bottom:12px;width:38px;height:38px;border-radius:50%;background:var(--cream);color:var(--burgundy);display:grid;place-items:center;font-size:12px;padding-left:2px}
 .tag{position:absolute;left:12px;top:12px;background:#fff;padding:5px 11px;border-radius:999px;font:11px "Inter",sans-serif;font-weight:600;color:var(--burgundy)}
-.reel-copy{padding:16px}
+.reel-copy{padding:16px;color:var(--ink)}
 .reel-copy span{font:11px "Inter",sans-serif;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#a2836c}
 .reel-copy strong{display:block;margin-top:6px;font:20px "Plus Jakarta Sans",sans-serif;font-weight:700;line-height:1.2}
 .reel-blank{background:transparent;box-shadow:none;border:1.5px dashed var(--line);aspect-ratio:9/13}
 
-/* compare — pink */
-.compare{background:var(--pink);border-radius:56px 56px 0 0;margin-top:-40px;position:relative;z-index:2;padding-top:116px}
-.compare-copy{max-width:640px;margin-bottom:30px;font-size:16px;color:#5c3530}
+/* compare — dark, pink as accent pop */
+.compare{background:var(--burgundy2);border-radius:56px 56px 0 0;margin-top:-40px;position:relative;z-index:2;padding-top:116px}
+.compare-copy{max-width:640px;margin-bottom:30px;font-size:16px;color:#e8d6cf}
 .two-col{display:grid;gap:14px}
-.col-card{background:#fff;border-radius:var(--r);padding:26px}
+.col-card{background:#fff;border-radius:var(--r);padding:26px;color:var(--ink)}
 .col-card b{display:block;margin-bottom:10px;font:13px "Inter",sans-serif;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--burgundy)}
 .col-card p{margin:0;color:#6b4c3b}
-.together{margin-top:16px;padding:18px 24px;border-radius:var(--r);background:var(--burgundy);color:var(--cream);text-align:center;font-weight:600}
+.together{margin-top:16px;padding:18px 24px;border-radius:var(--r);background:var(--pink);color:var(--burgundy);text-align:center;font-weight:600}
 
 /* testimonials — cream + butter, no full blue card */
 .testi-grid{display:grid;gap:14px}
 .testi{border-radius:var(--r);padding:28px;display:grid;gap:16px}
-.testi.b1{background:#fff;border:1px solid var(--line)}
-.testi.b2{background:var(--beige)}
+.testi.b1{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.testi.b2{background:var(--beige);color:var(--ink)}
 .testi .stat{font:clamp(40px,6vw,58px) "Plus Jakarta Sans",sans-serif;font-weight:800;color:var(--burgundy)}
 .testi p{margin:0;font-size:16px;line-height:1.5;color:var(--ink)}
 .testi footer{font:13px "Inter",sans-serif;font-weight:600;color:#6b4c3b}
 
 /* process */
-.process{background:#f6e9dc}
+.process{background:var(--base-dark)}
 .steps{display:grid;gap:20px}
 .step{display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:start}
 .num-circ{width:44px;height:44px;border-radius:50%;background:#fff;display:grid;place-items:center;font:15px "Plus Jakarta Sans",sans-serif;font-weight:700;color:var(--burgundy)}
 .step h3{font-size:21px;font-weight:700;margin:0 0 4px}
 .step p{margin:0;color:#6b4c3b;max-width:420px}
 
+/* process — folder tabs */
+.process .heading h2{font-size:clamp(28px,3.6vw,38px);max-width:560px}
+.folder{width:100%}
+.folder-nav{display:flex;position:relative;z-index:1}
+.folder-tab{flex:1;margin-right:-16px;padding:22px 4px;text-align:center;border-radius:20px 20px 0 0;font:14px "Inter",sans-serif;font-weight:800;letter-spacing:.03em;color:var(--cream);cursor:pointer;border:0;transition:transform .4s cubic-bezier(.16,1,.3,1),filter .3s ease;position:relative;-webkit-tap-highlight-color:transparent}
+.folder-tab:last-child{margin-right:0}
+.folder-tab:nth-child(1){background:var(--beige-d);z-index:1}
+.folder-tab:nth-child(2){background:var(--brown);z-index:2}
+.folder-tab:nth-child(3){background:var(--burgundy2);z-index:3}
+.folder-tab:nth-child(4){background:var(--ink);z-index:4}
+.folder-tab:not(.active){filter:brightness(.82)}
+.folder-tab.active{transform:translateY(-12px);z-index:10}
+.folder-card{position:relative;z-index:0;margin-top:-12px;background:var(--burgundy2);border-radius:4px 28px 28px 28px;padding:72px 60px;color:var(--cream);min-height:340px;display:flex;flex-direction:column;justify-content:center;box-shadow:0 20px 50px rgba(61,40,28,.18)}
+.folder-card h3{font-family:"Fraunces",serif;font-weight:400;font-size:clamp(28px,4vw,42px);line-height:1.3;margin:0 0 20px;color:var(--cream)}
+.folder-card h3 b{font-weight:400}
+.folder-card h3 em{font-style:italic}
+.folder-card p{margin:0;font-size:17px;line-height:1.75;color:#e8d6cf;max-width:560px;transition:opacity .3s ease}
+.folder-card p b{color:var(--cream);font-weight:700}
+.folder-card.swap h3,.folder-card.swap p{opacity:0;transform:translateY(6px)}
+.folder-card h3,.folder-card p{transition:opacity .35s ease,transform .35s ease}
+
 /* faq */
 .faq{display:grid;gap:10px}
-.faq details{background:#fff;border-radius:var(--r);overflow:hidden}
+.faq details{background:#fff;color:var(--ink);border-radius:var(--r);overflow:hidden}
 .faq summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:34px 1fr 18px;gap:14px;align-items:center;padding:20px 22px}
 .faq summary::-webkit-details-marker{display:none}
 .faq .qn{width:26px;height:26px;border-radius:50%;background:var(--pink);display:grid;place-items:center;font:12px "Inter",sans-serif;font-weight:700;color:var(--burgundy)}
@@ -186,20 +211,22 @@ section{padding:76px 0;position:relative}
 .faq details[open] summary .plus{transform:rotate(45deg)}
 .faq .a{padding:0 22px 22px 70px;margin:0;color:#6b4c3b;max-width:520px}
 
-/* weddings — dark, dedicated pitch */
-.weddings{background:var(--burgundy);color:var(--cream);border-radius:56px 56px 0 0;margin-top:-40px;position:relative;z-index:2;padding:96px 0}
+/* weddings — photo backdrop, dedicated pitch */
+.weddings{background:linear-gradient(180deg,rgba(20,13,9,.6),rgba(20,13,9,.78) 55%,rgba(20,13,9,.92)),url('bg-weddings.jpg');background-size:cover;background-position:center;color:var(--cream);border-radius:56px 56px 0 0;margin-top:-40px;position:relative;z-index:2;padding:120px 0}
 .weddings .eyebrow{color:var(--pink)}
 .weddings .heading h2{max-width:600px}
 .weddings .heading p{color:#e8d6cf;max-width:460px}
 
-/* web demo — simple, interactive sites pitch */
-.webdemo{background:var(--sky);border-radius:56px 56px 0 0;margin-top:-40px;position:relative;z-index:2;padding:96px 0 68px}
+/* web demo — photo backdrop, interactive sites pitch */
+.webdemo{background:linear-gradient(180deg,rgba(20,13,9,.5),rgba(20,13,9,.7) 55%,rgba(20,13,9,.9)),url('bg-webdemo.jpg');background-size:cover;background-position:center;border-radius:56px 56px 0 0;margin-top:-40px;position:relative;z-index:2;padding:96px 0 68px}
 .webdemo .heading{margin-bottom:30px}
+.webdemo .heading h2,.webdemo .heading .eyebrow{color:var(--cream)}
+.webdemo .heading p{color:#e8d6cf}
 .mini-feats{display:grid;gap:12px;margin-bottom:30px}
-.mini-feat{border-radius:var(--r);padding:24px}
-.mini-feat:nth-child(1){background:var(--pink)}
-.mini-feat:nth-child(2){background:var(--cream)}
-.mini-feat:nth-child(3){background:var(--beige-d)}
+.mini-feat{border-radius:var(--r);padding:24px;color:var(--ink);background:rgba(255,243,226,.94);backdrop-filter:blur(6px)}
+.mini-feat:nth-child(1){background:rgba(224,186,168,.94)}
+.mini-feat:nth-child(2){background:rgba(255,243,226,.96)}
+.mini-feat:nth-child(3){background:rgba(236,217,200,.94)}
 .mini-feat b{display:block;margin-bottom:8px;font:19px "Plus Jakarta Sans",sans-serif;font-weight:700}
 .mini-feat span{color:#6b4c3b;font-size:14.5px;line-height:1.5}
 
@@ -244,8 +271,8 @@ section{padding:76px 0;position:relative}
 <section class="hero">
   <div class="wrap">
     <div class="hero-copy">
-      <span class="eyebrow">Contenu & communication pour les marques d'aujourd'hui</span>
-      <h1>De l'inconnu à <span>incontournable.</span></h1>
+      <span class="label">Ciel Creative Studio</span>
+      <h1>De l'inconnu à incontournable.</h1>
       <p>Nous créons des contenus et une présence qui donnent à votre marque une vraie place dans les esprits.</p>
       <div class="cta-row">
         <a class="btn" href="#services">Découvrir Ciel</a>
@@ -355,11 +382,17 @@ section{padding:76px 0;position:relative}
       <span class="eyebrow">La suite est simple</span>
       <h2>On se parle. On propose. On crée. On fait vivre.</h2>
     </div>
-    <div class="steps">
-      <div class="step"><div class="num-circ">1</div><div><h3>On se parle.</h3><p>Vous nous racontez votre marque, vos envies et là où vous avez besoin de renfort.</p></div></div>
-      <div class="step"><div class="num-circ">2</div><div><h3>On propose.</h3><p>Une direction, des idées et une façon de travailler qui a du sens pour vous.</p></div></div>
-      <div class="step"><div class="num-circ">3</div><div><h3>On crée.</h3><p>On transforme la direction en contenu, en communication et en choses concrètes.</p></div></div>
-      <div class="step"><div class="num-circ">4</div><div><h3>On fait vivre.</h3><p>Votre présence trouve un rythme et reste juste, belle et active dans le temps.</p></div></div>
+    <div class="folder">
+      <div class="folder-nav" id="folderNav">
+        <button class="folder-tab active" data-step="0">1er</button>
+        <button class="folder-tab" data-step="1">2e</button>
+        <button class="folder-tab" data-step="2">3e</button>
+        <button class="folder-tab" data-step="3">4e</button>
+      </div>
+      <div class="folder-card" id="folderCard">
+        <h3>Étape 1 : <em>On se parle.</em></h3>
+        <p>Vous nous racontez votre marque, vos envies et là où vous avez besoin de renfort — <b>on prend le temps de bien comprendre avant de proposer quoi que ce soit.</b></p>
+      </div>
     </div>
   </div>
 </section>
@@ -484,6 +517,31 @@ document.querySelectorAll(".counter").forEach(el=>counterIo.observe(el));
     card.addEventListener("click",toggle);
     card.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();toggle()}});
   });
+})();
+
+(function(){
+  const nav=document.getElementById("folderNav");
+  const card=document.getElementById("folderCard");
+  if(!nav||!card)return;
+  const STEPS=[
+    {label:"Étape 1", title:"On se parle.", body:"Vous nous racontez votre marque, vos envies et là où vous avez besoin de renfort — <b>on prend le temps de bien comprendre avant de proposer quoi que ce soit.</b>"},
+    {label:"Étape 2", title:"On propose.", body:"Une direction, des idées et une façon de travailler qui a du sens pour vous — <b>rien n'est lancé sans votre validation.</b>"},
+    {label:"Étape 3", title:"On crée.", body:"On transforme la direction en contenu, en communication et en choses concrètes — <b>prêtes à publier, pensées pour votre marque.</b>"},
+    {label:"Étape 4", title:"On fait vivre.", body:"Votre présence trouve un rythme et reste juste, belle et active dans le temps — <b>on continue d'ajuster avec vous.</b>"}
+  ];
+  const tabs=[...nav.querySelectorAll(".folder-tab")];
+  tabs.forEach(tab=>tab.addEventListener("click",()=>{
+    const i=+tab.dataset.step;
+    if(tab.classList.contains("active"))return;
+    tabs.forEach(t=>t.classList.remove("active"));
+    tab.classList.add("active");
+    card.classList.add("swap");
+    setTimeout(()=>{
+      const s=STEPS[i];
+      card.innerHTML=`<h3>${s.label} : <em>${s.title}</em></h3><p>${s.body}</p>`;
+      card.classList.remove("swap");
+    },220);
+  }));
 })();
 </script>
 </body></html>
