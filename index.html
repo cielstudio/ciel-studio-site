@@ -54,7 +54,7 @@
   --burgundy:#3d281c; --burgundy2:#4d3428;
   --pink:#e0baa8; --pink-d:#cf9d8d;
   --beige:#ecd9c8; --beige-d:#d9c0ab;
-  --brown:#7a5240;
+  --brown:#7a5240; --khaki:#b3956d;
   --base-dark:#221811;
   --line:rgba(61,40,28,.14); --line-i:rgba(255,243,226,.18); --r:28px;
 }
@@ -69,7 +69,8 @@ img{max-width:100%;display:block}
 /* header — dark */
 header{position:sticky;top:0;z-index:50;background:rgba(61,40,28,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line-i)}
 .nav{display:flex;align-items:center;justify-content:space-between;min-height:68px}
-.logo{font:23px "Plus Jakarta Sans",sans-serif;font-weight:800;letter-spacing:.01em;color:var(--pink)}
+.logo{display:flex;align-items:center}
+.logo img{height:22px;width:auto;display:block}
 .links{display:none;align-items:center;gap:28px;font-size:14px;font-weight:500;color:#e8d6cf}
 .links a{padding:4px 0;border-bottom:1.5px solid transparent;transition:border-color .15s}
 .links a:hover{border-color:var(--pink)}
@@ -83,6 +84,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(61,40,28,.94);backdrop-f
 .mobile{position:fixed;inset:0;z-index:58;display:grid;align-content:center;gap:18px;padding:90px 26px;background:var(--burgundy);color:var(--cream);transform:translateY(-104%);transition:transform .4s cubic-bezier(.34,1.56,.64,1)}
 .mobile.open{transform:translateY(0)}
 .mobile a{font:44px/1.05 "Plus Jakarta Sans",sans-serif;font-weight:700}
+.mobile-close{position:absolute;top:22px;right:22px;width:44px;height:44px;border-radius:50%;border:1.5px solid var(--line-i);background:none;color:var(--cream);display:grid;place-items:center;cursor:pointer}
 
 section{padding:76px 0;position:relative}
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
@@ -257,7 +259,7 @@ section{padding:76px 0;position:relative}
 <body>
 
 <header><nav class="nav wrap">
-  <a class="logo" href="#top">Ciel Creative Studio</a>
+  <a class="logo" href="#top"><img src="logo-ciel.png" alt="Ciel"></a>
   <div class="links">
     <a href="#services">Expertises</a><a href="#reels">Formats</a><a href="#method">Méthode</a><a href="#faq">FAQ</a>
     <a class="btn" href="#contact">Contact</a>
@@ -265,6 +267,7 @@ section{padding:76px 0;position:relative}
   <button class="menu-btn" aria-controls="mobile" aria-expanded="false">MENU +</button>
 </nav></header>
 <nav id="mobile" class="mobile">
+  <button class="mobile-close" aria-label="Fermer le menu"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 2L16 16M16 2L2 16"/></svg></button>
   <a href="#services">Expertises</a><a href="#reels">Formats</a><a href="#method">Méthode</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
 </nav>
 
@@ -329,15 +332,15 @@ section{padding:76px 0;position:relative}
       <p>Un aperçu du type de contenu qu'on aime produire, prêt à décliner pour votre marque.</p>
     </div>
     <div class="reel-grid">
-      <article class="reel"><div class="reel-media"><video src="food.mp4" poster="food-poster.jpg" autoplay muted loop playsinline></video><span class="tag">Food</span><span class="play">▶</span></div><div class="reel-copy"><span>Food</span><strong>Donner envie avant la première bouchée.</strong></div></article>
-      <article class="reel"><div class="reel-media"><video src="experience.mp4" poster="experience-poster.jpg" autoplay muted loop playsinline></video><span class="tag">Loisirs</span><span class="play">▶</span></div><div class="reel-copy"><span>Expérience</span><strong>Vendre une expérience, pas une activité.</strong></div></article>
-      <article class="reel"><div class="reel-media"><video src="mariage.mp4" poster="mariage-poster.jpg" autoplay muted loop playsinline></video><span class="tag">Mariage</span><span class="play">▶</span></div><div class="reel-copy"><span>Content creation</span><strong>Capturer le jour comme il s'est vécu.</strong></div></article>
-      <article class="reel"><div class="reel-media"><video src="fitness.mp4" poster="fitness-poster.jpg" autoplay muted loop playsinline></video><span class="tag">Fitness</span><span class="play">▶</span></div><div class="reel-copy"><span>Fitness</span><strong>Donner envie de s'entraîner ici.</strong></div></article>
-      <article class="reel"><div class="reel-media"><video src="mode.mp4" poster="mode-poster.jpg" autoplay muted loop playsinline></video><span class="tag">Événements</span><span class="play">▶</span></div><div class="reel-copy"><span>Café</span><strong>Recap de vos événements.</strong></div></article>
-      <article class="reel"><div class="reel-media"><video src="airbnb.mp4" poster="airbnb-poster.jpg" autoplay muted loop playsinline></video><span class="tag">Airbnb &amp; Hôtels</span><span class="play">▶</span></div><div class="reel-copy"><span>Hébergement</span><strong>Donner envie d'y passer la nuit.</strong></div></article>
-      <article class="reel"><div class="reel-media"><video src="soin.mp4" poster="soin-poster.jpg" autoplay muted loop playsinline></video><span class="tag">Beauté</span><span class="play">▶</span></div><div class="reel-copy"><span>Soin</span><strong>Expliquer un soin en quelques secondes.</strong></div></article>
-      <article class="reel"><div class="reel-media"><video src="accessoires.mp4" poster="accessoires-poster.jpg" autoplay muted loop playsinline></video><span class="tag">Accessoires</span><span class="play">▶</span></div><div class="reel-copy"><span>Produit</span><strong>Créer du désir autour d'un détail.</strong></div></article>
-      <article class="reel"><div class="reel-media"><video src="immobilier.mp4" poster="immobilier-poster.jpg" autoplay muted loop playsinline></video><span class="tag">Immobilier</span><span class="play">▶</span></div><div class="reel-copy"><span>Immobilier</span><strong>Faire tomber amoureux d'une annonce.</strong></div></article>
+      <article class="reel"><div class="reel-media"><video src="food.mp4" poster="food-poster.jpg" autoplay muted loop playsinline></video><span class="tag">Food</span><span class="play"><svg width="11" height="13" viewBox="0 0 11 13" fill="currentColor"><path d="M0 0L11 6.5L0 13V0Z"/></svg></span></div><div class="reel-copy"><span>Food</span><strong>Donner envie avant la première bouchée.</strong></div></article>
+      <article class="reel"><div class="reel-media"><video src="experience.mp4" poster="experience-poster.jpg" autoplay muted loop playsinline></video><span class="tag">Loisirs</span><span class="play"><svg width="11" height="13" viewBox="0 0 11 13" fill="currentColor"><path d="M0 0L11 6.5L0 13V0Z"/></svg></span></div><div class="reel-copy"><span>Expérience</span><strong>Vendre une expérience, pas une activité.</strong></div></article>
+      <article class="reel"><div class="reel-media"><video src="mariage.mp4" poster="mariage-poster.jpg" autoplay muted loop playsinline></video><span class="tag">Mariage</span><span class="play"><svg width="11" height="13" viewBox="0 0 11 13" fill="currentColor"><path d="M0 0L11 6.5L0 13V0Z"/></svg></span></div><div class="reel-copy"><span>Content creation</span><strong>Capturer le jour comme il s'est vécu.</strong></div></article>
+      <article class="reel"><div class="reel-media"><video src="fitness.mp4" poster="fitness-poster.jpg" autoplay muted loop playsinline></video><span class="tag">Fitness</span><span class="play"><svg width="11" height="13" viewBox="0 0 11 13" fill="currentColor"><path d="M0 0L11 6.5L0 13V0Z"/></svg></span></div><div class="reel-copy"><span>Fitness</span><strong>Donner envie de s'entraîner ici.</strong></div></article>
+      <article class="reel"><div class="reel-media"><video src="mode.mp4" poster="mode-poster.jpg" autoplay muted loop playsinline></video><span class="tag">Événements</span><span class="play"><svg width="11" height="13" viewBox="0 0 11 13" fill="currentColor"><path d="M0 0L11 6.5L0 13V0Z"/></svg></span></div><div class="reel-copy"><span>Café</span><strong>Recap de vos événements.</strong></div></article>
+      <article class="reel"><div class="reel-media"><video src="airbnb.mp4" poster="airbnb-poster.jpg" autoplay muted loop playsinline></video><span class="tag">Airbnb &amp; Hôtels</span><span class="play"><svg width="11" height="13" viewBox="0 0 11 13" fill="currentColor"><path d="M0 0L11 6.5L0 13V0Z"/></svg></span></div><div class="reel-copy"><span>Hébergement</span><strong>Donner envie d'y passer la nuit.</strong></div></article>
+      <article class="reel"><div class="reel-media"><video src="soin.mp4" poster="soin-poster.jpg" autoplay muted loop playsinline></video><span class="tag">Beauté</span><span class="play"><svg width="11" height="13" viewBox="0 0 11 13" fill="currentColor"><path d="M0 0L11 6.5L0 13V0Z"/></svg></span></div><div class="reel-copy"><span>Soin</span><strong>Expliquer un soin en quelques secondes.</strong></div></article>
+      <article class="reel"><div class="reel-media"><video src="accessoires.mp4" poster="accessoires-poster.jpg" autoplay muted loop playsinline></video><span class="tag">Accessoires</span><span class="play"><svg width="11" height="13" viewBox="0 0 11 13" fill="currentColor"><path d="M0 0L11 6.5L0 13V0Z"/></svg></span></div><div class="reel-copy"><span>Produit</span><strong>Créer du désir autour d'un détail.</strong></div></article>
+      <article class="reel"><div class="reel-media"><video src="immobilier.mp4" poster="immobilier-poster.jpg" autoplay muted loop playsinline></video><span class="tag">Immobilier</span><span class="play"><svg width="11" height="13" viewBox="0 0 11 13" fill="currentColor"><path d="M0 0L11 6.5L0 13V0Z"/></svg></span></div><div class="reel-copy"><span>Immobilier</span><strong>Faire tomber amoureux d'une annonce.</strong></div></article>
     </div>
   </div>
 </section>
@@ -454,15 +457,17 @@ section{padding:76px 0;position:relative}
     <div class="foot">
       <span>© Ciel Studio 2026</span>
       <span>Annecy · France</span>
-      <a href="https://instagram.com/cielstudio.co" target="_blank" rel="noreferrer">@cielstudio.co ↗</a>
+      <a href="https://instagram.com/cielstudio.co" target="_blank" rel="noreferrer">@cielstudio.co<svg width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-1px;margin-left:2px"><path d="M3 8L8 3M8 3H4.5M8 3V6.5"/></svg></a>
     </div>
   </div>
 </footer>
 
 <script>
-const mb=document.querySelector(".menu-btn"),mm=document.querySelector(".mobile");
+const mb=document.querySelector(".menu-btn"),mm=document.querySelector(".mobile"),mc=document.querySelector(".mobile-close");
 mb.onclick=()=>{const o=mm.classList.toggle("open");mb.setAttribute("aria-expanded",o);mb.textContent=o?"FERMER −":"MENU +"};
-mm.querySelectorAll("a").forEach(a=>a.onclick=()=>{mm.classList.remove("open");mb.setAttribute("aria-expanded",false);mb.textContent="MENU +"});
+function closeMobile(){mm.classList.remove("open");mb.setAttribute("aria-expanded",false);mb.textContent="MENU +"}
+mc.onclick=closeMobile;
+mm.querySelectorAll("a").forEach(a=>a.onclick=closeMobile);
 
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");io.unobserve(e.target)}}),{threshold:.1});
 document.querySelectorAll(".reveal").forEach(e=>io.observe(e));
